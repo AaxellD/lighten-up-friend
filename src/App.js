@@ -57,6 +57,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <aside className="aside">
+        <Aside />
+        </aside>
 
         <header>
           <h1>Lighten Up Friend</h1>
