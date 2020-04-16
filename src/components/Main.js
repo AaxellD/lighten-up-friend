@@ -1,18 +1,21 @@
 import React from 'react';
 import Jokes from './joke.js';
+import Form from './Form.js';
+import UserJoke from './UserJoke.js';
 
-// let baseURL = '';
-// if (process.env.NODE_ENV === 'development') {
-//     baseURL = 'http://localhost:8000';
-// } else {
-//     console.log('This is for heroku')
-// }
+let baseURL = 'http://localhost:8888';
+if (process.env.NODE_ENV === 'development') {
+    baseURL = 'http://localhost:8888';
+} else {
+    console.log('This is for heroku')
+}
 
 class Main extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             jokes: [],
+            userjokes: []
         }
     }
     fetchJokes = () => {
@@ -34,44 +37,90 @@ class Main extends React.Component {
     }
 
     handleCreate = (createJoke) => {
-        fetch("https://jokeapi-v2.p.rapidapi.com/submit", {
-            "method": "PUT",
-            "headers": {
-                "x-rapidapi-host": "jokeapi-v2.p.rapidapi.com",
-                "x-rapidapi-key": "717010dd4fmsh9df52870a541027p15f265jsn27c4cb8a9aad",
-                "content-type": "application/json",
-                "accept": "application/json"
-            },
-            body:JSON.stringify(createJoke)
-                // Example
-            // "body": {
-            //     "formatVersion": 2,
-            //     "category": "Miscellaneous",
-            //     "type": "single",
-            //     "joke": "A horse walks into a bar...",
-            //     "flags": {
-            //         "nsfw": true,
-            //         "religious": false,
-            //         "political": true,
-            //         "racist": false,
-            //         "sexist": false
-            //     }
-            // }
+        fetch(`${baseURL}/jokes`, {
+          body: JSON.stringify(createJoke),
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
+          }
         })
-            .then( createdJoke => {
-                console.log(createJoke);
+          .then(createdJoke => {
+            console.log(createJoke)
+            return createdJoke.json();
+            
+          })
+          .then(jsoneduserjoke => {
+            this.props.handleView('home')
+            this.setState(prevState => {
+              prevState.userjokes = jsoneduserjoke
+              return {
+                userjokes: prevState.userjokes
+              }
             })
+          }).catch(err => console.log(err))
+      }
+
+    handleUpdate = (updateData) => {
+        fetch(`${baseURL}/jokes/${updateData.id}`, {
+            body: JSON.stringify(updateData),
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            }
+        }).then(updateJoke => {
+            this.props.handleView('home')
+            this.fetchJokes()
+        }).catch((err) => console.log(err))
     }
 
+    handleDelete = (id) => {
+        fetch(`${baseURL}/jokes/${id}`,{
+          method:'DELETE',
+          headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+          }
+        }).then(json => {
+          this.setState(prevState => {
+            const jokes = prevState.jokes.filter(joke => joke.id !==id)
+            return {jokes}
+          })
+        }).catch(err => console.log(err))
+      }
+      
+    //   render after parents
+    componentDidMount(){
+        this.fetchJokes()
+    }
 
     //=======| RENDER |========
     render() {
         return (
+            <>
             <div>
                 <h1>Main Page</h1>
                 <button className="jokeButton" onClick={this.fetchJokes}>Get a Joke</button>
                 <Jokes jokes={this.state.jokes} />
             </div>
+            <div>
+            <h1>{this.props.view.pageTitle}</h1>
+            {this.props.view.page === 'home' ? this.state.userjokes.map((jokeData) => (
+              <UserJoke 
+                key={jokeData.id}
+                jokeData={jokeData}
+                handleView = {this.props.handleView}
+                handleDelete = {this.handleDelete}
+              />
+            )): <Form 
+                  handleCreate={this.handleCreate}
+                  handleUpdate={this.handleUpdate}
+                  formInputs={this.props.formInputs}
+                  view={this.props.view}
+                />}
+          </div>
+          </>
         )
     }
     // Component end

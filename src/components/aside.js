@@ -14,6 +14,14 @@ class Aside extends React.Component {
             this.props.handleView('home')
           }}>Home</li>
 
+          <li onClick={() => { 
+            this.props.handleView('addJoke') 
+          }}>Add joke</li>
+
+          <li onClick={() => { 
+            this.props.handleView('editJoke') 
+          }}>Edit joke</li>
+
           <li onClick={() => {
             this.props.handleView('SubmitJoke')
           }}>Submit Joke</li>
