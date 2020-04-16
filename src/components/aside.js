@@ -15,20 +15,13 @@ class Aside extends React.Component {
           }}>Home</li>
 
           <li onClick={() => {
-            this.props.handleView('jod')
-          }}>Joke Of The Day</li>
+            this.props.handleView('SubmitJoke')
+          }}>Submit Joke</li>
 
           <li onClick={() => {
-            this.props.handleView('animal')
-          }}>Animal Joke of the Day </li>
+            this.props.handleView('GetJoke')
+          }}>Get A Joke</li>
 
-          <li onClick={() => {
-            this.props.handleView('blonde')
-          }}>Blonde Joke of the Day </li>
-
-          <li onClick={() => {
-            this.props.handleView('knock')
-          }}>Knock Knock Joke of the Day </li>
         </ul>
 
       </aside>
