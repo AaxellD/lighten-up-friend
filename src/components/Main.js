@@ -3,9 +3,9 @@ import Jokes from './joke.js';
 import Form from './Form.js';
 import UserJoke from './UserJoke.js';
 
-let baseURL = '';
+let baseURL = 'http://localhost:8888';
 if (process.env.NODE_ENV === 'development') {
-    baseURL = 'http://localhost:8000';
+    baseURL = 'http://localhost:8888';
 } else {
     console.log('This is for heroku')
 }
@@ -46,7 +46,9 @@ class Main extends React.Component {
           }
         })
           .then(createdJoke => {
-            return createdJoke.json()
+            console.log(createJoke)
+            return createdJoke.json();
+            
           })
           .then(jsoneduserjoke => {
             this.props.handleView('home')
