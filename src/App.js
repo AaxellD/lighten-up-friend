@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Main from './components/Main.js';
+import Aside from './components/aside.js'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  render() {
+    return (
+      <div>
+
+        <header>
+          <h1>Lighten Up Friend</h1>
+          <h5>The world is meant to be fun!</h5>
+        </header>
+
+        <div>
+          <Main />
+        </div>
+
+
+      </div>
+    )
+  }
 }
 
 export default App;
