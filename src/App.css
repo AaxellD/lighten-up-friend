@@ -15,12 +15,12 @@ header {
 }
 
 .body {
-  margin-left:12.5%;
+  margin-left:14.5%;
   padding:20px;
 }
 
 @media only screen and (max-width:1200px) {
   .body {
-    margin-left: 150px;
+    margin-left: 180px;
   }
 }

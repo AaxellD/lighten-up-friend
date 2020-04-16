@@ -3,9 +3,9 @@ import Jokes from './joke.js';
 import Form from './Form.js';
 import UserJoke from './UserJoke.js';
 
-let baseURL = 'http://localhost:8888';
+let baseURL = 'http://localhost:80';
 if (process.env.NODE_ENV === 'development') {
-    baseURL = 'http://localhost:8888';
+    baseURL = 'http://localhost:80';
 } else {
     console.log('This is for heroku')
 }
@@ -103,8 +103,7 @@ class Main extends React.Component {
                 <h1>Main Page</h1>
                 <button className="jokeButton" onClick={this.fetchJokes}>Get a Joke</button>
                 <Jokes jokes={this.state.jokes} />
-            </div>
-            <div>
+        
             <h1>{this.props.view.pageTitle}</h1>
             {this.props.view.page === 'home' ? this.state.userjokes.map((jokeData) => (
               <UserJoke 
