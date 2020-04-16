@@ -7,3 +7,20 @@ body {
 header {
   text-align: center;
 }
+
+.aside {
+  position: absolute;
+  left:0;
+  padding:20px;
+}
+
+.body {
+  margin-left:12.5%;
+  padding:20px;
+}
+
+@media only screen and (max-width:1200px) {
+  .body {
+    margin-left: 150px;
+  }
+}

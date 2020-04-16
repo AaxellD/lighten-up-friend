@@ -8,18 +8,18 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <aside className="aside">
+        <Aside />
+        </aside>
 
         <header>
           <h1>Lighten Up Friend</h1>
           <h5>The world is meant to be fun!</h5>
         </header>
 
-        <div>
+        <div className="body">
           <Main />
         </div>
-
-        <h1>Lets pray this worked!</h1>
-
       </div>
     )
   }
