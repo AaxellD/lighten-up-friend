@@ -18,6 +18,7 @@ class App extends React.Component {
           <Main />
         </div>
 
+        <h1>Lets pray this worked!</h1>
 
       </div>
     )
