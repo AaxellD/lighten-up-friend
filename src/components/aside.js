@@ -37,4 +37,4 @@ class Aside extends React.Component {
   }
 }
 
-export default Aside
+export default Aside;

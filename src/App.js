@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Main from './components/Main.js';
-import Aside from './components/Aside.js'
+import Aside from './components/Aside.js';
 
 class App extends React.Component {
   constructor(props) {
