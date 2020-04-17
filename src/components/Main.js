@@ -7,7 +7,7 @@ let baseURL = 'http://localhost:80';
 if (process.env.NODE_ENV === 'development') {
     baseURL = 'http://localhost:80';
 } else {
-    console.log('This is for heroku')
+    baseURL= 'postgres://btngpbkauucvsj:8fe7e57c32ccdafa77f10b405ba83e226af1281b399fb9f3fe501a9a8125c29f@ec2-3-211-48-92.compute-1.amazonaws.com:5432/dambb0tr497ddb'
 }
 
 class Main extends React.Component {
