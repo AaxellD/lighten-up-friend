@@ -49,6 +49,7 @@ class Main extends React.Component {
             return createdJoke.json();
           })
           .then(jsoneduserjoke => {
+            console.log(jsoneduserjoke)
             this.props.handleView('home')
             this.setState(prevState => {
               prevState.userjokes = jsoneduserjoke
