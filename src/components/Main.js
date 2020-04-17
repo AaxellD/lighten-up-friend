@@ -102,6 +102,7 @@ class Main extends React.Component {
   //   render after parents
   componentDidMount() {
     this.fetchJokes()
+    this.fetchUserJokes();
   }
 
   //=======| RENDER |========
