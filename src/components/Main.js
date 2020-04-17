@@ -3,11 +3,11 @@ import Jokes from './joke.js';
 import Form from './Form.js';
 import UserJoke from './UserJoke.js';
 
-let baseURL = 'http://localhost:8888';
+let baseURL= 'http://localhost:80';
 if (process.env.NODE_ENV === 'development') {
-    baseURL = 'http://localhost:8888';
+  baseURL = 'http://localhost:80';
 } else {
-    console.log('This is for heroku')
+    baseURL= 'https://lighten-up-api.herokuapp.com/'
 }
 
 class Main extends React.Component {
@@ -46,17 +46,13 @@ class Main extends React.Component {
           }
         })
           .then(createdJoke => {
-            console.log(createJoke)
             return createdJoke.json();
-            
           })
           .then(jsoneduserjoke => {
             this.props.handleView('home')
             this.setState(prevState => {
               prevState.userjokes = jsoneduserjoke
-              return {
-                userjokes: prevState.userjokes
-              }
+              return { userjokes: prevState.userjokes }
             })
           }).catch(err => console.log(err))
       }
@@ -102,10 +98,10 @@ class Main extends React.Component {
             <div>
                 <h1>Main Page</h1>
                 <button className="jokeButton" onClick={this.fetchJokes}>Get a Joke</button>
-                <Jokes jokes={this.state.jokes} />
-            </div>
-            <div>
+                <Jokes jokes={this.state.jokes} userjokes={this.state.userjokes} />
+        
             <h1>{this.props.view.pageTitle}</h1>
+
             {this.props.view.page === 'home' ? this.state.userjokes.map((jokeData) => (
               <UserJoke 
                 key={jokeData.id}

@@ -57,17 +57,17 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <aside className="aside">
-        <Aside />
-        </aside>
 
         <header>
           <h1>Lighten Up Friend</h1>
           <h5>The world is meant to be fun!</h5>
         </header>
 
-        <div>
-        <Aside handleView={this.handleView} />
+        <aside className="aside">
+        <Aside  handleView={this.handleView}/>
+        </aside>
+
+        <div className="body">
           <Main 
             formInputs={this.state.formInputs}
             view={this.state.view}
