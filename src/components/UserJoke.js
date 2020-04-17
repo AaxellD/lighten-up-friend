@@ -13,7 +13,7 @@ class UserJoke extends React.Component {
   // ==============
   render() {
     return (
-      <article>
+      <article className="joke-wrapper">
         <div className="joke-header">
           <h1>{this.props.jokeData.setup}</h1>
         </div>
