@@ -46,17 +46,13 @@ class Main extends React.Component {
           }
         })
           .then(createdJoke => {
-            console.log(createJoke)
             return createdJoke.json();
-            
           })
           .then(jsoneduserjoke => {
             this.props.handleView('home')
             this.setState(prevState => {
               prevState.userjokes = jsoneduserjoke
-              return {
-                userjokes: prevState.userjokes
-              }
+              return { userjokes: prevState.userjokes }
             })
           }).catch(err => console.log(err))
       }
@@ -105,6 +101,7 @@ class Main extends React.Component {
                 <Jokes jokes={this.state.jokes} userjokes={this.state.userjokes} />
         
             <h1>{this.props.view.pageTitle}</h1>
+
             {this.props.view.page === 'home' ? this.state.userjokes.map((jokeData) => (
               <UserJoke 
                 key={jokeData.id}
