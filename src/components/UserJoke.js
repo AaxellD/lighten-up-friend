@@ -11,7 +11,7 @@ class UserJoke extends React.Component {
   // ==============
   // RENDER
   // ==============
-  render () {
+  render() {
     return (
       <article>
         <div className="joke-header">
@@ -22,14 +22,12 @@ class UserJoke extends React.Component {
         </div>
         <div className="joke-options">
           <ul>
-            <li onClick={() => {
-              this.props.handleView('editjoke', 
-              this.props.jokeData)}}>edit Joke</li>
-            <li onClick={() => {this.props.handleDelete(this.props.jokeData.id)}}>delete Joke</li>
+            <li onClick={() => { this.props.handleView('editjoke', this.props.jokeData) }}>edit Joke</li>
+            <li onClick={() => { this.props.handleDelete(this.props.jokeData.id) }}>delete Joke</li>
           </ul>
         </div>
       </article>
-      
+
     )
   }
 }
