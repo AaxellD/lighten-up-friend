@@ -56,9 +56,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="wrapper">
 
-        <header>
+        <header className="header">
           <h1>Lighten Up Friend</h1>
           <h5>The world is meant to be fun!</h5>
         </header>

@@ -96,7 +96,7 @@ class Main extends React.Component {
     render() {
         return (
             <>
-            <div>
+            <div className="main-wrapper">
                 <h1>Main Page</h1>
                 <button className="jokeButton" onClick={this.fetchJokes}>Get a Joke</button>
                 <Jokes jokes={this.state.jokes} userjokes={this.state.userjokes} />

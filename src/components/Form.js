@@ -47,7 +47,7 @@ class Form extends React.Component {
   // ==============
   render () {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className="joke-form">
         <label>
           setup
           <input type="text" placeholder="your setup" id="setup" value={this.state.setup} onChange={this.handleChange}/>
