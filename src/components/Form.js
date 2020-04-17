@@ -12,7 +12,7 @@ class Form extends React.Component {
     this.state = {
       setup: '',
       delivery: '',
-      id: ''
+      id: null
     }
   }
 
