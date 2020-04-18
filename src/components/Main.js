@@ -3,12 +3,12 @@ import Jokes from './joke.js';
 import Form from './Form.js';
 import UserJoke from './UserJoke.js';
 
-let baseURL = 'http://localhost:80';
-// if (process.env.NODE_ENV === 'development') {
-//   baseURL = 'http://localhost:80';
-// } else {
-//   baseURL = 'https://lighten-up-api.herokuapp.com/'
-// }
+let baseURL = '';
+if (process.env.NODE_ENV === 'development') {
+  baseURL = 'http://localhost:80';
+} else {
+  baseURL = 'https://lighten-up-api.herokuapp.com/'
+}
 
 class Main extends React.Component {
     constructor(props) {
