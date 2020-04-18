@@ -5,9 +5,9 @@ import UserJoke from './UserJoke.js';
 
 let baseURL = '';
 if (process.env.NODE_ENV === 'development') {
-    baseURL = 'http://localhost:8888';
+  baseURL = 'http://localhost:80';
 } else {
-    console.log('This is for heroku')
+  baseURL = 'https://lighten-up-api.herokuapp.com/'
 }
 
 class Main extends React.Component {

@@ -11,8 +11,7 @@ class Form extends React.Component {
     super()
     this.state = {
       setup: '',
-      delivery: '',
-      id: null
+      delivery: ''
     }
   }
 
@@ -37,8 +36,7 @@ class Form extends React.Component {
   componentDidMount() {
     this.setState({
       setup: this.props.formInputs.setup,
-      delivery: this.props.formInputs.delivery,
-      id: this.props.formInputs.id
+      delivery: this.props.formInputs.delivery
     })
   }
 
