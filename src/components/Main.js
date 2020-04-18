@@ -4,11 +4,11 @@ import Form from './Form.js';
 import UserJoke from './UserJoke.js';
 
 let baseURL = 'http://localhost:80';
-if (process.env.NODE_ENV === 'development') {
-  baseURL = 'http://localhost:80';
-} else {
-  baseURL = 'https://lighten-up-api.herokuapp.com/'
-}
+// if (process.env.NODE_ENV === 'development') {
+//   baseURL = 'http://localhost:80';
+// } else {
+//   baseURL = 'https://lighten-up-api.herokuapp.com/'
+// }
 
 class Main extends React.Component {
   constructor(props) {
@@ -37,7 +37,7 @@ class Main extends React.Component {
   }
 
   fetchUserJokes = () => {
-    fetch("https://lighten-up-api.herokuapp.com/jokes")
+    fetch(`${baseURL}/jokes`)
       .then(data => data.json())
       .then(jData => {
         this.setState({
@@ -53,8 +53,8 @@ class Main extends React.Component {
       body: JSON.stringify(createJoke),
       method: 'POST',
       headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
       }
     })
       .then(createdJoke => {
