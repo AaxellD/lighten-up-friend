@@ -10,7 +10,7 @@ class Aside extends React.Component {
         {/* Menu List */}
         <h1>Joke Categories</h1>
         <ul>
-          <li onClick={() => {
+        <li onClick={() => {
             this.props.handleView('home')
           }}>Home</li>
 
@@ -18,21 +18,17 @@ class Aside extends React.Component {
             this.props.handleView('addJoke') 
           }}>Add joke</li>
 
-          <li onClick={() => {
-            this.props.handleView('jod')
-          }}>Joke Of The Day</li>
+          <li onClick={() => { 
+            this.props.handleView('editJoke') 
+          }}>Edit joke</li>
 
           <li onClick={() => {
-            this.props.handleView('animal')
-          }}>Animal Joke of the Day </li>
+            this.props.handleView('SubmitJoke')
+          }}>Submit Joke</li>
 
           <li onClick={() => {
-            this.props.handleView('blonde')
-          }}>Blonde Joke of the Day </li>
-
-          <li onClick={() => {
-            this.props.handleView('knock')
-          }}>Knock Knock Joke of the Day </li>
+            this.props.handleView('GetJoke')
+          }}>Get A Joke</li>
         </ul>
 
       </aside>
