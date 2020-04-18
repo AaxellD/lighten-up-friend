@@ -11,23 +11,26 @@ class UserJoke extends React.Component {
   // ==============
   // RENDER
   // ==============
-  render() {
+  render () {
     return (
-      <article className="joke-wrapper">
-        <div className="joke-header">
-          <h1>{this.props.jokeData.setup}</h1>
-        </div>
+      <article>
+        {/* <div className="joke-header">
+          <h1>User Jokes</h1>
+        </div> */}
         <div className="joke-body">
+          {this.props.jokeData.setup}<br/>
           {this.props.jokeData.delivery}
         </div>
         <div className="joke-options">
           <ul>
-            <li onClick={() => { this.props.handleView('editjoke', this.props.jokeData) }}>edit Joke</li>
-            <li onClick={() => { this.props.handleDelete(this.props.jokeData.id) }}>delete Joke</li>
+            <li onClick={() => {
+              this.props.handleView('editJoke', 
+              this.props.jokeData)}}>edit Joke</li>
+            <li onClick={() => {this.props.handleDelete(this.props.jokeData.id)}}>delete Joke</li>
           </ul>
         </div>
       </article>
-
+      
     )
   }
 }
