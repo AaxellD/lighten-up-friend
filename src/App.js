@@ -28,13 +28,13 @@ class App extends React.Component {
     }
     switch (view) {
       case 'home':
-        pageTitle = 'jokes...'
+        pageTitle = 'User Jokes'
         break
       case 'addJoke':
-        pageTitle = 'created jokes'
+        pageTitle = 'Create jokes'
         break
       case 'editJoke':
-        pageTitle = 'edited jokes'
+        pageTitle = 'Edit jokes'
         formInputs = {
           setup: jokeData.setup,
           delivery: jokeData.delivery,
@@ -56,22 +56,19 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="wrapper">
+      <div>
 
-        <header className="header">
+        <header>
           <h1>Lighten Up Friend</h1>
           <h5>The world is meant to be fun!</h5>
         </header>
 
-        <aside className="aside">
-        <Aside  handleView={this.handleView}/>
-        </aside>
-
-        <div className="body">
+        <div>
+        <Aside handleView={this.handleView} />
           <Main 
-            formInputs={this.state.formInputs}
             view={this.state.view}
             handleView={this.handleView}
+            formInputs={this.state.formInputs}
           />
         </div>
 

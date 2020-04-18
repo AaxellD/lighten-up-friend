@@ -12,6 +12,7 @@ class Form extends React.Component {
     this.state = {
       setup: '',
       delivery: '',
+      id: null
     }
   }
 
@@ -36,7 +37,8 @@ class Form extends React.Component {
   componentDidMount() {
     this.setState({
       setup: this.props.formInputs.setup,
-      delivery: this.props.formInputs.delivery
+      delivery: this.props.formInputs.delivery,
+      id: this.props.formInputs.id
     })
   }
 
@@ -45,7 +47,7 @@ class Form extends React.Component {
   // ==============
   render () {
     return (
-      <form onSubmit={this.handleSubmit} className="joke-form">
+      <form onSubmit={this.handleSubmit}>
         <label>
           setup
           <input type="text" placeholder="your setup" id="setup" value={this.state.setup} onChange={this.handleChange}/>
