@@ -46,15 +46,15 @@ class Form extends React.Component {
   render () {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label>
-          setup
-          <input type="text" placeholder="your setup" id="setup" value={this.state.setup} onChange={this.handleChange}/>
+        <label class='setup'>
+          Setup
+          <input class='placerholderSetup' type="text" placeholder="your setup" id="setup" value={this.state.setup} onChange={this.handleChange}/>
         </label>
-        <label>
-          delivery
-          <input type="text" placeholder="your delivery" id="delivery" value={this.state.delivery} onChange={this.handleChange}/>
+        <label class='delivery'>
+          Delivery
+          <input class='placerholderDelivery' type="text" placeholder="your delivery" id="delivery" value={this.state.delivery} onChange={this.handleChange}/>
         </label>
-        <input type="submit" value="Add joke"/>
+        <input class='formButton' type="submit" value="Add joke"/>
       </form>
     )
   }

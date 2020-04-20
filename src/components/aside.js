@@ -8,17 +8,19 @@ class Aside extends React.Component {
       <aside>
 
         {/* Menu List */}
-      
-        <ul>
-        <li onClick={() => {
+
+    <nav>
+        <button class='homeButton' onClick={() => {
             this.props.handleView('home')
-          }}>Home</li>
+          }}>HOME</button>
 
-          <li onClick={() => {
+
+          <button class='addJokeButton'onClick={() => {
             this.props.handleView('addJoke')
-          }}>Add joke</li>
+          }}>ADD JOKE</button>
 
-        </ul>
+
+        </nav>
 
       </aside>
     )

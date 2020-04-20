@@ -115,7 +115,7 @@ class Main extends React.Component {
                 <button className="jokeButton" onClick={this.fetchJokes}>Get a Joke</button>
                 <Jokes jokes={this.state.jokes} />
             </div>
-            <div>
+            <div class='jokeCreator'>
             <h1 class='jokesTitle'>{this.props.view.pageTitle}</h1>
             {this.props.view.page === 'home' ? this.state.userjokes.map((jokeData) => (
               <UserJoke
