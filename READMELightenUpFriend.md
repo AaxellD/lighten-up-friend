@@ -1,5 +1,5 @@
 ## About
-Link to [Lighten-Up-Friend](https://tripprga.herokuapp.com/)
+Link to [Lighten-Up-Friend](https://lighten-up-friend.herokuapp.com/)
 
 Lighten-Up-Friend is a full-stack application with a PHP backend and React frontend.  It has a random joke generator using a third-party API and it also has the ability for you to make your own joke.
 
