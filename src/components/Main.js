@@ -99,7 +99,7 @@ class Main extends React.Component {
           })
         }).catch(err => console.log(err))
       }
-      
+
     //   render after parents
     componentDidMount(){
         this.fetchJokes()
@@ -110,21 +110,21 @@ class Main extends React.Component {
     render() {
         return (
             <>
-            <div>
+            <div class='jokeGenerator'>
                 <h1>Random Joke Generator</h1>
                 <button className="jokeButton" onClick={this.fetchJokes}>Get a Joke</button>
                 <Jokes jokes={this.state.jokes} />
             </div>
             <div>
-            <h1>{this.props.view.pageTitle}</h1>
+            <h1 class='jokesTitle'>{this.props.view.pageTitle}</h1>
             {this.props.view.page === 'home' ? this.state.userjokes.map((jokeData) => (
-              <UserJoke 
+              <UserJoke
                 key={jokeData.id}
                 jokeData={jokeData}
                 handleView = {this.props.handleView}
                 handleDelete = {this.handleDelete}
               />
-            )): <Form 
+            )): <Form class='UserJoke'
                   handleCreate={this.handleCreate}
                   handleUpdate={this.handleUpdate}
                   formInputs={this.props.formInputs}

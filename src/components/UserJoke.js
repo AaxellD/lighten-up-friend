@@ -13,7 +13,7 @@ class UserJoke extends React.Component {
   // ==============
   render () {
     return (
-      <article>
+      <article class='createJoke'>
         {/* <div className="joke-header">
           <h1>User Jokes</h1>
         </div> */}
@@ -24,13 +24,13 @@ class UserJoke extends React.Component {
         <div className="joke-options">
           <ul>
             <li onClick={() => {
-              this.props.handleView('editJoke', 
+              this.props.handleView('editJoke',
               this.props.jokeData)}}>edit Joke</li>
             <li onClick={() => {this.props.handleDelete(this.props.jokeData.id)}}>delete Joke</li>
           </ul>
         </div>
       </article>
-      
+
     )
   }
 }

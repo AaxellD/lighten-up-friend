@@ -8,14 +8,14 @@ class Aside extends React.Component {
       <aside>
 
         {/* Menu List */}
-        <h1>Joke Categories</h1>
+      
         <ul>
         <li onClick={() => {
             this.props.handleView('home')
           }}>Home</li>
 
-          <li onClick={() => { 
-            this.props.handleView('addJoke') 
+          <li onClick={() => {
+            this.props.handleView('addJoke')
           }}>Add joke</li>
 
         </ul>

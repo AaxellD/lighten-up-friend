@@ -13,7 +13,7 @@ class App extends React.Component {
       },
       formInputs: {
         setup: null,
-        delivery: null, 
+        delivery: null,
         id: null
       }
     }
@@ -58,14 +58,14 @@ class App extends React.Component {
     return (
       <div>
 
-        <header>
+        <header class='top'>
           <h1>Lighten Up Friend</h1>
           <h5>The world is meant to be fun!</h5>
         </header>
 
         <div>
         <Aside handleView={this.handleView} />
-          <Main 
+          <Main
             view={this.state.view}
             handleView={this.handleView}
             formInputs={this.state.formInputs}
