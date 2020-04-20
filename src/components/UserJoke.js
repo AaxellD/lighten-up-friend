@@ -14,11 +14,8 @@ class UserJoke extends React.Component {
   render () {
     return (
       <article class='createJoke'>
-        {/* <div className="joke-header">
-          <h1>User Jokes</h1>
-        </div> */}
         <div className="joke-body">
-          {this.props.jokeData.setup}<br/>
+          <h3>{this.props.jokeData.setup}</h3>
           {this.props.jokeData.delivery}
         </div>
         <div className="joke-options">

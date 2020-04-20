@@ -4,7 +4,23 @@ background-image: url(https://cdn.hipwallpaper.com/i/5/76/ucDVfG.jpg);
 background-size: cover;
 color: white;
 font-family: 'Acme', sans-serif;
+min-height: 100vh;
 }
+
+li{
+  list-style: none;
+}
+/* Side */
+aside {
+  list-style: none;
+  background-color: black;
+  padding:20px 10px;
+  border-style: solid;
+  border-color: gold;
+  margin-bottom: 50px;
+}
+
+
 
 header {
   text-align: center;
@@ -17,53 +33,40 @@ header {
 
  
   min-width: 200px;
-  margin:0px 30%;
-  margin-bottom: 10px;
-  padding-top: 20px;
+  margin:25px 30%;
 }
 
 header h1{
-  padding-top: 30px;
   font-size: 40px;
 }
 
 header h5{
   font-size: 20px;
 }
+/* ------ END HEADER ------ */
+  /* padding:20px; */
 
-aside {
-  list-style: none;
-  background-color: black;
-  padding:20px 10px;
-  border-style: solid;
-  border-color: gold;
-  margin-bottom: 50px;
-}
 form {
   display: block;
   text-align: center;
 }
 
-li{
-  list-style: none;
-}
-
-.body {
-  margin-left:14.5%;
-  padding:20px;
-}
-
 .jokeGenerator {
   display:  block;
   text-align: center;
-  background-color: black;
+  background-color: rgba(15,15,15,.99);
 
-  margin:auto 20%;
+  margin:auto 10%;
 
-  padding:20px 0px;
+  padding:20px 20px;
 
   border-style: solid;
+  box-shadow:0px 0px 5px seashell;
   border-color: gold;
+}
+
+.jokeGenerator h1 {
+  color:salmon;
 }
 
 .jokeButton{
@@ -79,26 +82,55 @@ li{
   cursor: pointer;
   color:blue;
 }
+/* -------JOKE BODY ----------- */
+.createJoke {
+  background-color: rgba(34, 51, 66, 0.301);
+  border:2px solid white;
+  padding:20px;
+  margin:30px 0px;
+  text-align: center;
+}
 
 .jokesTitle{
   display: block;
   text-align: center;
+  color:red;
 }
-
-.joke-body{
-  font-size: 30px;
-  color: blue;
+.joke-body {
+  font-size:1.5em;
+}
+.joke-body h3{
+  color:salmon;
 }
 
 .joke-options{
-  color: white;
-  font-size: 30px;
+  font-size: 20px;
 }
+  .joke-options ul {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .joke-options li{
+    width:90px;
+    padding:10px;
+    text-align: center;
+    border: 1px solid white;
+  }
+
+  .joke-options li:hover {
+    background-color: white;
+    color:black;
+    cursor: pointer;
+  }
 
 .jokeCreator{
-  background-color: black;
-  margin: 30px 20%;
-  padding:0px 5%;
+  background-color: rgba(15,15,15.9);
+  color:white;
+  margin: 30px 17.5%;
+  border-radius: 1%;
+  box-shadow:2px 2px 10px 2px rgba(115,115,115,.9);
 
   border-style: solid;
   border-color: gold;
@@ -118,27 +150,31 @@ font-family: 'Acme', sans-serif;
 
 padding:10px 20px;
 
-box-shadow: 8px 2px gold;
+box-shadow: 4px 2px 3px gold;
 }
 
 .addJokeButton{
   background-color: black;
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   padding: 5px auto;
 
-  box-shadow: 8px 2px gold;
+  box-shadow: 4px 2px 3px gold;
   font-family: 'Acme', sans-serif;
 }
 
 .homeButton:hover{
 cursor: pointer;
-color: blue;
+color:black;
+background-color: white;
+box-shadow: 4px 2px 3px currentColor;
 }
 
 .addJokeButton:hover{
   cursor: pointer;
-  color: blue;
+  color:black;
+  background-color: white;
+  box-shadow: 4px 2px 3px salmon;
 }
 
 .formButton{
