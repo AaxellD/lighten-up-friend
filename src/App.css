@@ -9,13 +9,15 @@ font-family: 'Acme', sans-serif;
 header {
   text-align: center;
   background-color: black;
+
   border-style: dotted;
   border-width: thick;
   border-color: gold;
   border-radius: 50%;
-  height: 250px;
-  margin-left: 550px;
-  margin-right: 550px;
+
+ 
+  min-width: 200px;
+  margin:0px 30%;
   margin-bottom: 10px;
   padding-top: 20px;
 }
@@ -32,7 +34,7 @@ header h5{
 aside {
   list-style: none;
   background-color: black;
-  height: 70px;
+  padding:20px 10px;
   border-style: solid;
   border-color: gold;
   margin-bottom: 50px;
@@ -51,19 +53,15 @@ li{
   padding:20px;
 }
 
-@media only screen and (min-width:400px) {
-  .body {
-    margin-left: 180px;
-  }
-
 .jokeGenerator {
   display:  block;
   text-align: center;
   background-color: black;
-  margin-left: 200px;
-  margin-right: 200px;
-  padding-bottom:20px;
-  padding-top: 20px;
+
+  margin:auto 20%;
+
+  padding:20px 0px;
+
   border-style: solid;
   border-color: gold;
 }
@@ -72,6 +70,7 @@ li{
   background-color: black;
   color: white;
   border-color: gold;
+
   font-size: 30px;
   font-family: 'Acme', sans-serif;
 }
@@ -86,7 +85,6 @@ li{
   text-align: center;
 }
 
-
 .joke-body{
   font-size: 30px;
   color: blue;
@@ -99,36 +97,36 @@ li{
 
 .jokeCreator{
   background-color: black;
-  margin-top: 60px;
-  margin-left: 200px;
-  margin-right: 200px;
-  margin-bottom: 20px;
-  padding-top: 5px;
-  padding-bottom: 25px;
+  margin: 30px 20%;
+  padding:0px 5%;
+
   border-style: solid;
   border-color: gold;
+}
+
+nav {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .homeButton{
 background-color: black;
 color: white;
 font-size: 30px;
-padding-top: 5px;
-padding-bottom: 5px;
-padding-left: 10px;
-margin-left: 550px;
-margin-top: 10px;
-box-shadow: 8px 2px gold;
 font-family: 'Acme', sans-serif;
+
+padding:10px 20px;
+
+box-shadow: 8px 2px gold;
 }
 
 .addJokeButton{
   background-color: black;
   color: white;
   font-size: 30px;
-  margin-left: 100px;
-  padding-bottom:5px;
-  padding-top: 5px;
+  padding: 5px auto;
+
   box-shadow: 8px 2px gold;
   font-family: 'Acme', sans-serif;
 }
@@ -169,6 +167,22 @@ color: blue;
   margin-left: 5px;
 }
 
+div {
+  min-width: 300px;
+}
 
 
+@media only screen and (max-width:500px) {
+  .body {
+    margin:auto;
+  }
+  header{
+    margin:auto;
+  }
+  .jokeGenerator {
+    margin:auto;
+  }
+  .jokeCreator{
+    margin:auto;
+  }
 }
